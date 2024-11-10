@@ -1,0 +1,59 @@
+@use "../../scss/mixinss" as mn;
+
+.form {
+  width: 60rem;
+  border-radius: .5rem;
+  background: var(--clr-white);
+  padding: 1rem;
+  box-shadow: var(--box-shadow-y);
+  display: grid;
+  gap: 2rem;
+
+  &_delivery {
+    gap: 1rem;
+    font-size: 2rem;
+    color: var(--clr-primary);
+    @include mn.flex(center, center);
+  }
+
+  h4 {
+    color: rgba(0, 0, 0, 1);
+    font-weight: bold;
+  }
+
+  label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .5rem;
+    padding: 1rem;
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--box-shadow-y);
+    }
+  }
+
+  button {
+    font-size: 1.6rem;
+  }
+  
+  .input_cont {
+    position: relative;
+  }
+
+  &_text {
+    color: var(--clr-primary);
+    font-size: 1.4rem;
+  }
+}
+
+.load_input {
+  background: rgba(0, 0, 0, .08);
+  cursor: not-allowed;
+}

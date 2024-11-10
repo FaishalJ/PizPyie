@@ -1,0 +1,91 @@
+@use "../../media-queries.scss" as m;
+@use "../../scss/mixinss" as mn;
+
+.options {
+  padding: 2rem;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+  background: var(--clr-primary-light);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &_option {
+    width: 25rem;
+
+    &__price_label {
+      margin-bottom: 1rem;
+      @include mn.flex(center, space-between);
+    }
+    
+    &__price {
+      font-size: 1.8rem !important;
+    }
+    
+    label:not(.options_option__label) {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    input, select {
+      width: 100%;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+      background: var(--clr-white-2);
+    }
+
+    &:not(:last-child) {
+      padding-bottom: 5rem;
+      border-bottom: 2px solid var(--clr-white-2);
+    }
+  }
+
+  p:not(.options_option__price) {
+    margin-top: auto;
+    text-align: center;
+    font-size: 1.2rem;
+
+    a {
+      font-weight: bold;
+
+      &:hover {
+        color: var(--clr-primary);
+        text-decoration: underline;
+      }
+      
+    }
+  }
+
+  @include m.respond-to(medium) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    padding: 5rem 1.5rem;
+    transition: var(--transition-02);
+
+    &_option {
+      width: 30rem;
+      &:not(:last-child) {
+        padding-bottom: 0;
+        border-bottom: 0;
+      }
+    }
+
+    p:not(.options_option__price) {
+      display: none;
+    }
+  }
+  @include m.respond-to(small) {
+    &_option {
+      width: 100%;
+    }
+  }
+  
+  @include m.respond-to(height) {
+    overflow-y: scroll;
+    min-width: 30rem;
+  }
+}

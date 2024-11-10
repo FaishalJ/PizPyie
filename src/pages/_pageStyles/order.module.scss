@@ -1,0 +1,22 @@
+@use "../../media-queries.scss" as m;
+
+.order {
+  width: 60%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+
+  @include m.respond-to(medium) {
+    padding-top: 3rem;
+  }
+  
+  @include m.respond-to(medium-2) {
+    width: 70%;
+  }
+  @include m.respond-to(small) {
+    width: 100%;
+  }
+}

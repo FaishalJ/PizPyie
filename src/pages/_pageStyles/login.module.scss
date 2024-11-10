@@ -1,0 +1,69 @@
+@use "../../scss/mixinss" as mn;
+
+.login {
+  background: rgba(0, 0, 0, .2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  @include mn.flex(center, center);
+
+  &_title {
+    font-size: 2rem;
+    justify-self: center;
+    font-weight: bold;
+  }
+
+  &_form {
+    width: 40rem;
+    background: var(--clr-white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--box-shadow-all);
+    display: grid;
+    gap: 2rem;
+
+    label {
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    input {
+      width: 100%;
+      border: 2px solid var(--clr-white-2);
+      border-radius: 5px;
+      padding: 1rem;
+
+      &:focus {
+        outline: none;
+        box-shadow: var(--box-shadow-y);
+      }
+    }
+
+    a {
+      color: var(--clr-primary-light-2);
+      cursor: not-allowed;
+    }
+
+    small {
+      color: var(--clr-primary);
+    }
+  }
+
+  button {
+    padding: .5rem 2.4rem;
+    color: var(--clr-white);
+  }
+}
+
+
+@keyframes up {
+  from {
+    transform: translateY(-40px)
+  }
+  to {
+    transform: translateY(0)
+  }
+}

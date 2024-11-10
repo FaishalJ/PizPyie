@@ -1,0 +1,17 @@
+@use "../../media-queries.scss" as m;
+
+.logo{
+  font-family: "Rubik Bubbles";
+  font-size: 3.6rem;
+
+  @include m.respond-to(small) {
+    font-size: 3.4rem;
+  }
+}
+
+.white {
+  color: var(--clr-white);
+}
+.main {
+  color: var(--clr-primary);
+}

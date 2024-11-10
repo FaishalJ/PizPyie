@@ -1,0 +1,20 @@
+
+.list_el {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  overflow: auto;
+  align-content: flex-start;
+}
+
+.list_view {
+  padding: 0 2rem 0 2rem;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow: auto;
+}

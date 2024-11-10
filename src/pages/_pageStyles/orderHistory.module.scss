@@ -1,0 +1,57 @@
+@use "../../media-queries.scss" as m;
+.history {
+  border: 1px solid rgba(0, 0, 0, .1);
+  border-bottom: none;
+  height: min-content;
+  width: 70%;
+  margin: 0 auto;
+  background: var(--clr-white);
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  h2 {
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+    padding: 0 1.5rem;
+  }
+
+  tr {
+    text-align: left;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+    th {
+      padding: 1rem 1.5rem;
+      color: rgba(0, 0, 0, .4);
+      font-size: 1.5rem;
+    }
+  }
+
+  td {
+    padding: 1rem 1.5rem;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, .4);
+    border-collapse: collapse;
+
+    a {
+      color: var(--clr-primary);
+    }
+  }
+
+  @include m.respond-to(medium) {
+    margin-top: 3rem;
+    width: 80%;
+  }
+  @include m.respond-to(medium-2) {
+    width: 90%;
+  }
+  @include m.respond-to(small) {
+    width: 100%;
+  }
+  @include m.respond-to(small-2) {
+    overflow-x: scroll;
+    overflow-x: auto;
+  }
+}

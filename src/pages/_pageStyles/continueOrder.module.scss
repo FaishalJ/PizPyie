@@ -1,0 +1,36 @@
+.form {
+  width: 60rem;
+  border-radius: .5rem;
+  background: var(--clr-white);
+  padding: 1rem;
+  box-shadow: var(--box-shadow-y);
+  display: grid;
+  gap: 2rem;
+
+  p {
+    justify-self: center;
+    strong {
+      margin-left: 1rem;
+    }
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    background: var(--clr-white-2);
+    color: var(--clr-text);
+
+    &:hover {
+      color: var(--clr-text);
+      box-shadow: var(--box-shadow-y);
+    }
+  }
+  
+  & button:last-child {
+    background: var(--clr-primary);
+    color: var(--clr-white);
+  }
+}

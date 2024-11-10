@@ -1,0 +1,43 @@
+@use "../../media-queries.scss" as m;
+@use "../../scss/mixinss" as mn;
+
+.list {
+  padding: 1rem;
+  box-shadow: var(--box-shadow-all);
+  border-radius: .7rem;
+
+  @include mn.flex(center, space-between);
+
+  &_item {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  img {
+    height: 6rem;
+  }
+
+  &_details {
+    display: grid;
+    align-items: space-between;
+
+    p:not(:last-child) {
+      font-size: 1.4rem;
+    }
+  }
+
+  &_btns {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1.3px solid rgba(0, 0, 0, .1);
+    border-radius: .7rem;
+
+    button {
+      background: transparent;
+      color: var(--clr-primary);
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
+}

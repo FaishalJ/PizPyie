@@ -1,0 +1,12 @@
+@use "../../media-queries.scss" as m;
+@use "../../scss/mixinss" as mn;
+
+.home {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  @include mn.flex(center, center);
+
+  @include m.respond-to(medium) {
+    height: 94dvh;
+  }
+}

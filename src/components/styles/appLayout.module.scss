@@ -1,0 +1,16 @@
+@use "../../media-queries.scss" as m;
+
+.main {
+  max-width: var(--width-big);
+  margin: 0 auto;
+  padding: 3rem 0 0;
+
+  display: flex;
+  overflow: hidden;
+  height: 94dvh;
+  gap: 2rem;
+
+  @include m.respond-to(medium) {
+    display: unset;
+  }
+}

@@ -1,0 +1,72 @@
+@use "../../media-queries" as m;
+@use "../../scss/mixinss" as mn;
+
+.cart {
+  padding: 0 1.5rem;
+  width: 100%;
+
+  &_header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    button {
+      cursor: pointer;
+      display: block;
+      margin-left: auto;
+      background: var(--clr-white);
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      font-size: 2rem;
+      font-weight: 600;
+      box-shadow: var(--box-shadow-all);
+      @include mn.flex(center, center);
+      transition: var(--transition-02);
+
+      &:hover {
+        transform: translateX(-2px);
+      }
+    }
+  }
+
+  h4 {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+
+  &_section {
+    display: flex;
+    gap: 7rem;
+    height: 100%;
+    
+  }
+
+  &_item {
+    flex-basis: 65%;
+    overflow: auto;
+    padding-right: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  @include m.respond-to(medium) {
+    padding: 3rem 1.5rem;
+
+    &_item {
+      flex-basis: 72%;
+    }
+    &_section {
+      height: 77dvh;
+      gap: 4rem;
+    }
+  }
+
+  @include m.respond-to(small) {
+    &_section {
+      flex-direction: column;
+    }
+  }
+}

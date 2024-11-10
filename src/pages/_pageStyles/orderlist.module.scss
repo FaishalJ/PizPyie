@@ -1,0 +1,15 @@
+@use "../../scss/mixinss" as mn;
+
+.order_List {
+  @include mn.flex(center, space-between);
+  
+  div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    img {
+      width: 6rem;
+    }
+  }
+}

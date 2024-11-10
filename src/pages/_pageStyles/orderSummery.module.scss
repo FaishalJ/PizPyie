@@ -1,0 +1,46 @@
+.order_summery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+
+  h4 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    // margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem 1.5rem;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  thead
+  {
+    background-color: rgba(0, 0, 0, .05);
+  }
+
+  th:first-child,
+  td:first-child
+  {
+    text-align: left;
+    width: 50%;
+  }
+  
+  th:not(first-child),
+  td:not(first-child)
+  {
+    text-align: center;
+  }
+  
+  th:not(first-child) {
+    text-align: center;
+  }
+
+  th,td {
+    padding: .5rem 1.5rem;
+    font-size: 1.5rem;
+  }
+
+}

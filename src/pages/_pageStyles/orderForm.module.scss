@@ -1,0 +1,52 @@
+.order_form {
+  gap: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+  
+  display: flex;
+  flex-direction: column;
+
+  h4 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 1rem 1.5rem;
+  }
+
+  div {
+    padding: 0 .5rem;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    border-radius: .7rem;
+    padding: .5rem 1rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+
+    &:focus {
+      outline: none;
+      box-shadow: var(--box-shadow-y);
+    }
+  }
+
+  small {
+    color: var(--clr-primary);
+  }
+
+  &__buttons {
+    align-self: flex-end;
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    color: var(--clr-white);
+    align-self: end;
+  }
+}

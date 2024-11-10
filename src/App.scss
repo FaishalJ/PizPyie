@@ -1,0 +1,91 @@
+@use "./media-queries" as m;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clr-white: #fff;
+  --clr-white-2: #f1f3f6;
+  --clr-primary: #ff5a00;
+  --clr-primary-light: #fff9f5;
+  --clr-primary-light-2: rgb(255, 90, 0);
+  --clr-text: #646464;
+  --clr-black: #333;
+  
+  --box-shadow-all: 2px 2px 4px rgba(0, 0, 0, 0.30);
+  --box-shadow-y: 0px 2px 3px rgba(0, 0, 0, 0.30);
+  
+  --text-shadow-s: 1px 1px 2px rgba(0, 0, 0, 0.3);;
+  
+  --transition-02: all 0.2s ease;
+
+  --width-big: 110rem;
+}
+
+html {
+  // font 10, 9, 8, 7;
+  font-size: 62.5%;
+  
+  @include m.respond-to(big) {
+    font-size: 56.25%;
+  }
+
+  @include m.respond-to(big-2) {
+    font-size: 50%;
+  }
+
+  @include m.respond-to(medium) {
+    font-size: 43.75%;
+  }
+}
+
+body {
+  color: var(--clr-text);
+  font-size: 1.6rem;
+  background: var(--clr-white-2);
+}
+
+
+/*
+Range slider
+*/
+#cowbell {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  padding: unset;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+#cowbell::-webkit-slider-runnable-track {
+  height: 100%;
+  background: var(--clr-white-2);
+  border-radius: 5px;
+}
+#cowbell::-moz-range-track {
+  height: 100%;
+  background: var(--clr-white-2);
+  border-radius: 16px;
+}
+
+#cowbell::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none; 
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #f50;
+  box-shadow: -407px 0 0 400px #f50;
+}
+#cowbell::-moz-range-thumb {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #f50;
+  box-shadow: -407px 0 0 400px #f50;
+}

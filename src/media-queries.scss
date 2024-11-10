@@ -1,0 +1,36 @@
+// Break points;
+$bp-bg: 75em; // 1200px big;
+$bp-bg-2: 62.5em; // 1000px;
+$bp-md: 50em; // 800px;
+$bp-md-2: 37.5em; // 600px;
+$bp-sm: 34.375em; // 550;
+$bp-sm-2: 25em; // 400;
+$bp-xsm: 21.875em; // 350;
+// $bp-sm-h: 34.375em; // 550;
+
+@mixin respond-to($bp) {
+  @if $bp == big {
+    @media (max-width: $bp-bg) {@content}
+  }
+  @if $bp == big-2 {
+    @media (max-width: $bp-bg-2) {@content}
+  }
+  @if $bp == medium {
+    @media (max-width: $bp-md) {@content}
+  }
+  @if $bp == medium-2 {
+    @media (max-width: $bp-md-2) {@content}
+  }
+  @if $bp == small {
+    @media (max-width: $bp-sm) {@content}
+  }
+  @if $bp == small-2 {
+    @media (max-width: $bp-sm-2) {@content}
+  }
+  @if $bp == x-small {
+    @media (max-width: $bp-xsm) {@content}
+  }
+  @if $bp == height {
+    @media (max-height: $bp-sm) {@content}
+  }
+}

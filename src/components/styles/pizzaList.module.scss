@@ -1,0 +1,148 @@
+@use "../../media-queries.scss" as m;
+@use "../../scss/mixinss" as mn;
+
+.pizza_item {
+  position: relative;
+  background: var(--clr-white);
+  width: 17rem;
+  box-shadow: var(--box-shadow-all);
+  border-radius: 1rem;
+  padding: .5rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: min-content;
+  transition: var(--transition-02);
+
+  figure {
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 100%;
+
+    img {
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    figcaption {
+      font-size: 1.5rem;
+      margin-top: 1rem;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--clr-white-2);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+    width: 14rem;
+    text-align: center;
+    padding: .5rem;
+
+    &:hover {
+      background: var(--clr-primary);
+      color: var(--clr-white-2)
+    }
+  }
+
+  span {
+    position: absolute;
+    right: .5rem;
+    top: .5;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    border-radius: .5rem;
+    padding: 2px 4px;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+}
+
+.pizza_listview {
+  position: relative;
+  background: var(--clr-white);
+  width: 100%;
+  box-shadow: var(--box-shadow-all);
+  border-radius: 1rem;
+  padding: .5rem;
+  padding-bottom: 1rem;
+  padding-right: 1rem;
+  height: min-content;
+  transition: var(--transition-02);
+  
+  @include mn.flex(center, space-between);
+
+  figure {
+    overflow: hidden;
+    border-radius: 1rem;
+    display: flex;
+    gap: 2rem;
+
+    img {
+      width: 20rem;
+      border-top-right-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+    }
+
+    figcaption {
+      font-size: 1.5rem;
+      margin-top: 5rem;
+    }
+  }
+
+  p {
+    font-size: 2.4rem;
+    font-weight: bold;
+    position: absolute;
+    left: 22.5rem;
+  }
+
+  button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    background: var(--clr-white-2);
+    color: var(--clr-primary);
+    border: 1px solid var(--clr-primary);
+    width: 14rem;
+    text-align: center;
+    padding: .5rem;
+
+    &:hover {
+      background: var(--clr-primary);
+      color: var(--clr-white-2)
+    }
+  }
+
+  span {
+    position: absolute;
+    right: 1rem;
+    top: .5rem;
+    background: var(--clr-primary);
+    color: var(--clr-white);
+    border-radius: .5rem;
+    padding: 2px 4px;
+    display: inline-block;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+
+  @include m.respond-to(big) {
+    p {
+      left: 22.5rem;
+    }
+  }
+  @include m.respond-to(small-2) {
+    button {
+      position: absolute;
+      left: 22.5rem;
+      bottom: 4rem;
+    }
+  }
+}

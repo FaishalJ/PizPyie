@@ -1,0 +1,17 @@
+.error {
+  margin: 2rem auto;
+  max-width: 40rem;
+  text-align: center;
+
+  a {
+    display: inline-block;
+    border: solid 1px var(--clr-text);
+    padding: .5rem;
+    border-radius: 5px;
+    margin-top: 2rem;
+
+    &:hover {
+      box-shadow: var(--box-shadow-all);
+    }
+  }
+}

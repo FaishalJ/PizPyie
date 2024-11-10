@@ -1,0 +1,149 @@
+@use "../../media-queries.scss" as m;
+@use "../../scss/mixinss" as mn;
+
+.nav {
+  background: var(--clr-primary);
+  color: var(--clr-primary-light);
+  padding: 1rem 1.5rem;
+  box-shadow: var(--box-shadow-y);
+
+  &_pop__up {
+    position: absolute;
+    border-radius: .5rem;
+    width: 12rem;
+    height: 6.8rem;
+    right: 0;
+    bottom: -7.5rem;
+    background: var(--clr-white);
+    box-shadow: var(--box-shadow-y);
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    button {
+      color: rgba(0, 0, 0, .5);
+      padding: .5rem;
+      font-weight: 600;
+
+      @include mn.flex(center, center);
+      gap: 1rem;
+      
+      &:hover {
+        background: rgba(0, 0, 0, .1);
+      }
+
+      &:first-child {
+        border-bottom: 1px solid rgba(0, 0, 0, .1);
+      }
+    }
+  }
+  
+  &_div {
+    position: relative;
+    max-width: var(--width-big);
+    margin: 0 auto;
+
+    @include mn.flex(center, space-between);
+  }
+
+  &_profile {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &_link {
+    color: var(--clr-white);
+
+    &_cart {
+      font-size: 3rem;
+      position: relative;
+      transition: all .2s ease;
+
+      span {
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        padding: 10px;
+        top: -10px;
+        font-size: 1.2rem;
+        right: -15px;
+        background: #ffffff33;
+        border-radius: 50%;
+        font-weight: bold;
+        
+        @include mn.flex(center, center);
+      }
+
+      &:hover {
+        transform: translatex(-3px);
+      }
+    }
+    
+    &_register {
+      font-weight: bold;
+      padding: 2px 10px;
+      border: 2px solid var(--clr-white);
+      border-radius: 5px;
+
+      &:hover,
+      &:active {
+        box-shadow: var(--box-shadow-y);
+      }
+    }
+  }
+
+  &_image {
+    button {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: unset;
+      border: 0;
+      color: var(--clr-white);
+      
+      img {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+      }
+      
+      p {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+  }
+
+  @include m.respond-to(medium-2) {
+    &_div {
+      gap: 2rem;
+    }
+
+    &_image {
+      button {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  }
+
+  @include m.respond-to(small) {
+    &_div {
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+  }
+}
+
+.show {
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-02);
+}

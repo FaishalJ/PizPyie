@@ -1,0 +1,71 @@
+.btn {
+  padding: .5rem 2.4rem;
+  border-radius: .8rem;
+  font-weight: bold;
+  background: var(--clr-primary);
+  transition: var(--transition-02);
+  font-size: 1.4rem;
+
+  &:hover {
+    box-shadow: var(--box-shadow-y);
+  }
+}
+
+.absolute {
+  position: absolute;
+  right: 0;
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  height: 100%;
+  
+  &:hover {
+    padding: 0 2.4rem;
+  }
+}
+
+.clear {
+  background: var(--clr-white);
+  border: none;
+  justify-self: left;
+  color: #4a90e2;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  
+  &:hover {
+    box-shadow: unset;
+    background: none;
+    color: #4a90e2;
+  }
+}
+
+.guest {
+  border: 1px solid rgba(0, 0, 0, .1);
+  background: var(--clr-white-2);
+  color: var(--clr-text) !important;
+}
+
+.disable {
+  cursor: not-allowed;
+
+  &:hover {
+   background: rgba(0, 0, 0, .2) !important;
+  }
+}
+
+.remove {
+  background: var(--clr-primary-light-2) !important;
+  color: var(--clr-white) !important;
+  
+  &:hover {
+   background: var(--clr-primary) !important;
+   background: var(--clr-primary-light-2) !important;
+  }
+}
+
+.cancel {
+  color: var(--clr-primary) !important;
+  background: var(--clr-white) !important;
+  border: 1px solid var(--clr-primary) !important;
+}

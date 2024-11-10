@@ -1,0 +1,135 @@
+@use "../../media-queries.scss" as m;
+.order {
+  border-radius: .5rem;
+  border: 1px solid rgba(0, 0, 0, .1);
+  background: var(--clr-white);
+  width: 70%;
+  margin: 0 auto;
+  box-shadow: var(--box-shadow-y);
+  height: min-content;
+
+  display: flex;
+  flex-direction: column;
+
+  &_logo {
+    text-align: center;
+    background: var(--clr-white-2);
+    padding: 2rem 1.5rem;
+  }
+
+  &_header {
+    padding: 0 1.5rem 2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    
+    h2 {
+      font-weight: 600;
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      margin-top: 2rem;
+    }
+  }
+
+  &_summery {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    div p:first-child {
+      color: rgba(0, 0, 0, .4);
+    }
+  }
+
+  &_item {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding-bottom: .5rem;
+    table {
+      width: 100%;
+
+      thead {
+        text-align: left;
+        background-color: rgba(0, 0, 0, 0.05);
+        
+        th {
+          padding: 1rem 1.5rem;
+        }
+        th:last-child {
+          text-align: right;
+        }
+      }
+      
+      td {
+        padding: .2rem 1.5rem;
+      }
+      td:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &_sub_total {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &_total {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    padding: 2rem 1.5rem;
+    
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  &_text {
+    font-size: 1.4rem;
+    padding: 2rem 1.5rem;
+
+    p:first-child {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &_footer {
+    background: var(--clr-white-2);
+    padding: 2rem 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+
+    a {
+      color: var(--clr-primary);
+    }
+
+    span {
+      color: rgba(0, 0, 0, .4);
+    }
+  }
+
+  // Media queries
+  @include m.respond-to(medium) {
+    margin-top: 3rem;
+    width: 80%;
+  }
+  @include m.respond-to(small) {
+    width: 95%;
+  }
+  @include m.respond-to(small-2) {
+    &_summery {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}
