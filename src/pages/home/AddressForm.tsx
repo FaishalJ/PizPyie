@@ -7,23 +7,36 @@ import Button from "../../components/Button";
 
 import { useGeolocation } from "../../hooks/useGeolocation";
 import { useReverseGeo } from "../../hooks/useReverseGeo";
-import { updateAddress, addressData, updateIsChangingAddress, updateContinueOrder } from "../../redux/addressSlice";
+import {
+  updateAddress,
+  addressData,
+  updateIsChangingAddress,
+  updateContinueOrder,
+} from "../../redux/addressSlice";
 import { ILocation } from "../../lib/types";
 
 export default function AddressForm() {
   const { isLoading, position, error, getPosition } = useGeolocation();
-  const { isLoading: isLoadingLocation, error: locationError, getLocation } = useReverseGeo();
+  const {
+    isLoading: isLoadingLocation,
+    error: locationError,
+    getLocation,
+  } = useReverseGeo();
 
   const address = useSelector(addressData);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navigation = useNavigation();
+  console.log(address);
 
   async function handleGetLocation(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
     getPosition();
     if (!position) return;
-    const location = await getLocation(position.lat, position.lng) as ILocation;
+    const location = (await getLocation(
+      position.lat,
+      position.lng
+    )) as ILocation;
     const { country, county, formatted, suburb, city, street } = location;
     const local: ILocation = {
       country,
@@ -32,28 +45,27 @@ export default function AddressForm() {
       suburb,
       city,
       street,
-    }
+    };
     dispatch(updateAddress(local));
     dispatch(updateIsChangingAddress(true));
   }
 
   function handleOnchange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    dispatch(updateAddress({ ...address, formatted: e.target.value }));
+    dispatch(updateAddress({ ...address, suburb: e.target.value }));
     dispatch(updateIsChangingAddress(true));
   }
 
   function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     navigate("/menu");
-    setTimeout(function() {
+    setTimeout(function () {
       dispatch(updateIsChangingAddress(false));
-    }, 1500)
+    }, 1500);
   }
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
-
       <div className={styles.form_delivery}>
         <HiBuildingLibrary />
         <p> Delivery</p>
@@ -63,14 +75,35 @@ export default function AddressForm() {
       <div className={styles.input_label}>
         <label>Enter your address to set local deals and pricing.</label>
         <div className={styles.input_cont}>
-          <input className={isLoadingLocation ? styles.load_input : ""} type="text" placeholder="Enter your street address" name="address" disabled={isLoading || isLoadingLocation} value={address.formatted} onChange={handleOnchange} />
+          <input
+            className={isLoadingLocation ? styles.load_input : ""}
+            type="text"
+            placeholder="Enter your street address"
+            name="address"
+            disabled={isLoading || isLoadingLocation}
+            value={address.suburb}
+            onChange={handleOnchange}
+          />
 
-          {address.formatted && <Button btnType="absolute">{navigation.state === "loading" ? "Loading..." : "Order Now"}</Button>}
+          {address.formatted && (
+            <Button btnType="absolute">
+              {navigation.state === "loading" ? "Loading..." : "Order Now"}
+            </Button>
+          )}
         </div>
       </div>
 
-      <Button btnType="clear" onClick={handleGetLocation}><HiArrowUpRight /> Or use my current location</Button>
-      {(error || locationError) && <p className={styles.form_text}>{error || locationError}. {error ? "Please enable access to your location" : "Change your location address"}</p>}
+      <Button btnType="clear" onClick={handleGetLocation}>
+        <HiArrowUpRight /> Or use my current location
+      </Button>
+      {(error || locationError) && (
+        <p className={styles.form_text}>
+          {error || locationError}.{" "}
+          {error
+            ? "Please enable access to your location"
+            : "Change your location address"}
+        </p>
+      )}
     </form>
-  )
+  );
 }

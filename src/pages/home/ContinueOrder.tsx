@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from "react-redux";
 
 import Button from "../../components/Button";
 
-import { updateIsChangingAddress, addressData, updateContinueOrder } from "../../redux/addressSlice";
+import {
+  updateIsChangingAddress,
+  addressData,
+  updateContinueOrder,
+} from "../../redux/addressSlice";
 
 export default function ContinueOrder() {
   const navigate = useNavigate();
@@ -26,12 +30,15 @@ export default function ContinueOrder() {
 
   return (
     <form className={styles.form}>
-      <p> Delivery to:
-        <strong>{address.formatted}
-        </strong>
+      <p>
+        {" "}
+        Delivery to:
+        <strong>{address.suburb}</strong>
       </p>
       <Button onClick={handleChangeOrder}>Change address</Button>
-      <Button onClick={HandleContinueOrder}>{navigation.state === "loading" ? "Loading..." : "Continue order"}</Button>
+      <Button onClick={HandleContinueOrder}>
+        {navigation.state === "loading" ? "Loading..." : "Continue order"}
+      </Button>
     </form>
-  )
+  );
 }
