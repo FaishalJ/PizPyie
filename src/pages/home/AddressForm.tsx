@@ -27,7 +27,6 @@ export default function AddressForm() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navigation = useNavigation();
-  console.log(address);
 
   async function handleGetLocation(e: React.SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();

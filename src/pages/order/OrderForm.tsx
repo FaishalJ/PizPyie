@@ -51,7 +51,6 @@ export default function OrderForm() {
     setIsSubmitting(true);
 
     setTimeout(function () {
-      console.log(data);
       const clientId = generateRandomID();
       dispatch(
         updateOrderHistryItem({ ...data, orderId: clientId, cart: cartList })
