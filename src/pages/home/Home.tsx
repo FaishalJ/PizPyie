@@ -10,9 +10,10 @@ export default function Home() {
   const address = useSelector(addressData);
   const isAddressChange = useSelector(isChangingAddress);
 
-  const shouldShowAddressForm = !address.formatted || (address.formatted && isAddressChange);
-  const shouldShowContinueOrder = address.formatted && !isAddressChange;
-  
+  const shouldShowAddressForm =
+    !address.suburb || (address.suburb && isAddressChange);
+  const shouldShowContinueOrder = address.suburb && !isAddressChange;
+
   return (
     <div className={styles.home}>
       {shouldShowAddressForm && <AddressForm />}
