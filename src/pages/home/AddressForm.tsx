@@ -84,7 +84,7 @@ export default function AddressForm() {
             onChange={handleOnchange}
           />
 
-          {address.formatted && (
+          {address.suburb && (
             <Button btnType="absolute">
               {navigation.state === "loading" ? "Loading..." : "Order Now"}
             </Button>
